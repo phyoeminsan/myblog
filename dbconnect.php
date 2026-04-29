@@ -1,9 +1,9 @@
 <?php
    try {
-     $host = "localhost";
-    $dbname = "myblog";
-    $dbuser = "root";
-    $dbpassword = "";
+      $host = "localhost";
+      $dbname = "myblog";
+      $dbuser = "root";
+      $dbpassword = "";
 
     //Data source name
     $dsn = "mysql:host=$host;dbname=$dbname";
