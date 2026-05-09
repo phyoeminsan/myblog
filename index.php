@@ -28,8 +28,8 @@
 <header class="py-5 bg-light border-bottom mb-4">
     <div class="container">
         <div class="text-center my-5">
-            <h1 class="fw-bolder">Welcome to Blog Home!</h1>
-            <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+            <h1 class="fw-bolder">Welcome to Phyo's Blog!</h1>
+            <p class="lead mb-0">I meet me.I share you.</p>
         </div>
     </div>
 </header>
@@ -45,11 +45,11 @@
                 }else {
             ?>
             <div class="card mb-4">
-                <a href="#!"><img class="card-img-top" src="<?= $latest_post['image'] ?>" alt="..." /></a>
+                <a href="#!"><img class="card-img-top" src="admin/<?= $latest_post['image'] ?>" alt="..." /></a>
                 <div class="card-body">
                     <div class="small text-muted"><?= date('F d, Y', strtotime($latest_post['created_at'])) ?></div>
                     <h2 class="card-title"><?= $latest_post['title'] ?></h2>
-                    <p class="card-text"><?= substr($latest_post['description'],0,150) ?>.....</p>
+                    <p class="card-text"><?= substr(strip_tags($latest_post['description']),0,150) ?>.....</p>
                     <a class="btn btn-primary" href="detail.php?id=<?= $latest_post['id'] ?>">Read more →</a>
                 </div>
             </div>
@@ -63,11 +63,11 @@
                     <!-- Blog post-->
                     <!-- substr(string, start, number) -->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="<?php echo $post['image']  ?>" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="admin/<?php echo $post['image']  ?>" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted"><?php echo date('F d, Y',strtotime($post['created_at'])) ?></div>
                             <h2 class="card-title h4"><?php echo $post['title'] ?></h2>
-                            <p class="card-text"><?php echo substr($post['description'],0,150) ?>.....</p>
+                            <p class="card-text"><?php echo substr(strip_tags($post['description']),0,150) ?>.....</p>
                             <a class="btn btn-primary" href="detail.php?id=<?= $post['id'] ?>">Read more →</a>
                         </div>
                     </div>
